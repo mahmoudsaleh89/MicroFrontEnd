@@ -1,0 +1,170 @@
+
+lookup(): Promise<Microfrontend[]> {
+    return Promise.resolve([
+      {
+        // For Loading
+        remoteEntry: 'http://localhost:3001/remoteEntry.js',
+        remoteName: 'hire',
+        exposedModule: './Module',
+
+        // For Routing
+        displayName: 'Hire',
+        routePath: 'hire',
+        ngModuleName: 'PagesModule'
+      },
+      {
+        // For Loading
+        remoteEntry: 'http://localhost:3002/remoteEntry.js',
+        remoteName: 'boarding',
+        exposedModule: './Module',
+
+        // For Routing
+        displayName: 'Boarding',
+        routePath: 'boarding',
+        ngModuleName: 'PagesModule'
+      },
+      {
+        // For Loading
+        remoteEntry: 'http://localhost:3003/remoteEntry.js',
+        remoteName: 'my365',
+        exposedModule: './Module',
+
+        // For Routing
+        displayName: 'My365',
+        routePath: 'my365',
+        ngModuleName: 'PagesModule'
+      },
+      {
+        // For Loading
+        remoteEntry: 'http://localhost:3004/remoteEntry.js',
+        remoteName: 'people',
+        exposedModule: './Module',
+
+        // For Routing
+        displayName: 'People',
+        routePath: 'people',
+        ngModuleName: 'PagesModule'
+      },
+      {
+        // For Loading
+        remoteEntry: 'http://localhost:3005/remoteEntry.js',
+        remoteName: 'time',
+        exposedModule: './Module',
+
+        // For Routing
+        displayName: 'Time',
+        routePath: 'time',
+        ngModuleName: 'PagesModule'
+      },
+      {
+        // For Loading
+        remoteEntry: 'http://localhost:3006/remoteEntry.js',
+        remoteName: 'pay',
+        exposedModule: './Module',
+
+        // For Routing
+        displayName: 'Pay',
+        routePath: 'pay',
+        ngModuleName: 'PagesModule'
+      },
+      {
+        // For Loading
+        remoteEntry: 'http://localhost:3007/remoteEntry.js',
+        remoteName: 'performance',
+        exposedModule: './Module',
+
+        // For Routing
+        displayName: 'Performance',
+        routePath: 'performance',
+        ngModuleName: 'PagesModule'
+      },
+      {
+        // For Loading
+        remoteEntry: 'http://localhost:3008/remoteEntry.js',
+        remoteName: 'careers',
+        exposedModule: './Module',
+
+        // For Routing
+        displayName: 'Careers',
+        routePath: 'careers',
+        ngModuleName: 'PagesModule'
+      },
+      {
+        // For Loading
+        remoteEntry: 'http://localhost:3009/remoteEntry.js',
+        remoteName: 'learning',
+        exposedModule: './Module',
+
+        // For Routing
+        displayName: 'Learning',
+        routePath: 'learning',
+        ngModuleName: 'PagesModule'
+      },
+      {
+        // For Loading
+        remoteEntry: 'http://localhost:3010/remoteEntry.js',
+        remoteName: 'succession',
+        exposedModule: './Module',
+
+        // For Routing
+        displayName: 'Succession',
+        routePath: 'succession',
+        ngModuleName: 'PagesModule'
+      },
+      {
+        // For Loading
+        remoteEntry: 'http://localhost:3011/remoteEntry.js',
+        remoteName: 'analytics',
+        exposedModule: './Module',
+
+        // For Routing
+        displayName: 'Analytics',
+        routePath: 'analytics',
+        ngModuleName: 'PagesModule'
+      },
+      {
+        // For Loading
+        remoteEntry: 'http://localhost:3012/remoteEntry.js',
+        remoteName: 'planning',
+        exposedModule: './Module',
+
+        // For Routing
+        displayName: 'Planning',
+        routePath: 'planning',
+        ngModuleName: 'PagesModule'
+      },
+      {
+        // For Loading
+        remoteEntry: 'http://localhost:3013/remoteEntry.js',
+        remoteName: 'innovation',
+        exposedModule: './Module',
+
+        // For Routing
+        displayName: 'Innovation',
+        routePath: 'innovation',
+        ngModuleName: 'PagesModule'
+      },
+      {
+        // For Loading
+        remoteEntry: 'http://localhost:3014/remoteEntry.js',
+        remoteName: 'engagement',
+        exposedModule: './Module',
+
+        // For Routing
+        displayName: 'Engagement',
+        routePath: 'engagement',
+        ngModuleName: 'PagesModule'
+      },
+      {
+        // For Loading
+        remoteEntry: 'http://localhost:3015/remoteEntry.js',
+        remoteName: 'settings',
+        exposedModule: './Module',
+
+        // For Routing
+        displayName: 'Settings',
+        routePath: 'settings',
+        ngModuleName: 'PagesModule'
+      },
+    ] as Microfrontend[]);
+  }

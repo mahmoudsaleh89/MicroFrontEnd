@@ -1,0 +1,33 @@
+<!--KENDO-->
+
+<div class="custom-toolbar">
+  <button
+    kendoButton
+    icon="menu"
+    look="flat"
+    (click)="drawer.toggle()">
+  </button>
+  <span>
+    Welcome to Shepherd Micro front Modules
+  </span>
+</div>
+<kendo-drawer-container>
+  <kendo-drawer #drawer
+                [items]="microfrontends"
+                [width]="100"
+                [mini]="true"
+                [mode]="'push'"
+                [(expanded)]="expanded">
+    <ng-template kendoDrawerItemTemplate let-item>
+      <div class="k-drawer-link" [routerLink]="item.routePath">
+        <span>{{ item.displayName }}</span>
+      </div>
+    </ng-template>
+  </kendo-drawer>
+  <kendo-drawer-content>
+    <router-outlet></router-outlet>
+  </kendo-drawer-content>
+</kendo-drawer-container>
+
+
+
