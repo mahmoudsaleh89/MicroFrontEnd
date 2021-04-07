@@ -1,36 +1,82 @@
-/*
-$base-theme:Bootstrap;
-$skin-name:bootstrap-light;
-$swatch-name:Bootstrap;
-$border-radius: 0.5rem;
-$accent: #517097;
-$secondary: #e4e7eb;
-$info: #108091;
-$success: #197d30;
-$warning: #dfab0f;
-$error: #c41728;
-$body-bg: #ffffff;
-$body-color: #292b2c;
-$component-bg: #ffffff;
-$component-color: #292b2c;
-$card-cap-bg: #f7f7f9;
-$card-cap-color: #292b2c;
-$series-a: #0275d8;
-$series-b: #5bc0de;
-$series-c: #5cb85c;
-$series-d: #f0ad4e;
-$series-e: #e67d4a;
-$series-f: #d9534f;
+.title {
+  font-size: 18px;
+  margin: 0;
+}
+kendo-badge-container {
+  margin-right: 8px;
+}
+ul {
+  font-size: 14px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+li {
+  margin: 0 9px;
+}
+li:hover {
+  color: #ffc000;
+  cursor: pointer;
+}
+.k-appbar-section {
+  display: flex;
+}
+.content li {
+  margin: 0;
+  padding: 6px 5px;
+}
+.content ul {
+  display: block;
+}
+.content {
+  padding: 4px;
+}
+@media only screen and (max-width: 600px) {
+  .search-section {
+    display: none;
+  }
+  .appbar-items,
+  .user-actions kendo-badge-container,
+  kendo-avatar.k-avatar,
+  .k-appbar-separator {
+    display: none;
+  }
 
-
-
-@import "~@progress/kendo-theme-default/scss/panelbar/_index.scss";
-@import "~@progress/kendo-theme-default/scss/grid/_index.scss";
-@import "~@progress/kendo-theme-default/dist/all.scss";
-!*@import "~bootstrap/scss/bootstrap.scss";*!
-
-span{
-  color: red !important;
+  .overflow-button,
+  .search {
+    display: block;
+  }
 }
 
-*/
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .appbar-items,
+  .search,
+  kendo-avatar.k-avatar,
+  .user-actions kendo-badge-container,
+  .k-appbar-separator {
+    display: none;
+  }
+
+  .overflow-button {
+    display: block;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .appbar-items,
+  .user-actions kendo-badge-container,
+  .k-appbar-separator,
+  kendo-avatar.k-avatar {
+    display: block;
+  }
+
+  .overflow-button {
+    display: none;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}

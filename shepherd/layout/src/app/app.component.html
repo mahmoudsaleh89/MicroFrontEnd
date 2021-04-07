@@ -1,33 +1,111 @@
 <!--KENDO-->
+<kendo-appbar [position]="'top'">
+  <kendo-appbar-section class="title">
+    <img width="85" src="assets/images/logo.png">
+  </kendo-appbar-section>
 
-<div class="custom-toolbar">
+  <kendo-appbar-spacer [width]="'32px'"></kendo-appbar-spacer>
+
+  <kendo-appbar-spacer></kendo-appbar-spacer>
+  <kendo-appbar-section>
+    <button look="flat" kendoButton #modulesAnchor (click)="showModule = !showModule">
+      <kendo-avatar themeColor="inherit" [shape]="'rounded'" [icon]="'k-icon k-i-group'"></kendo-avatar>
+    </button>
+    <kendo-popup [anchor]="modulesAnchor" *ngIf="showModule" [margin]="margin">
+      <div class='content'>
+        <div class="row">
+          <ng-container *ngFor="let m of moduleRoute" [ngTemplateOutlet]="moduleTemplate"
+                        [ngTemplateOutletContext]="{module:m}"></ng-container>
+        </div>
+      </div>
+    </kendo-popup>
+  </kendo-appbar-section>
+  <kendo-appbar-section>
+    <kendo-badge-container>
+      <button look="flat" kendoButton>
+        <kendo-avatar themeColor="inherit" [shape]="'rounded'" [icon]="'k-icon k-i-bell'"></kendo-avatar>
+      </button>
+    </kendo-badge-container>
+    <button look="flat" kendoButton>
+      <kendo-avatar themeColor="inherit" [shape]="'rounded'" [icon]="'k-icon k-i-question'"></kendo-avatar>
+    </button>
+  </kendo-appbar-section>
+
+
+  <!--for Mobile-->
+  <kendo-appbar-section>
+    <button class="k-button k-flat overflow-button" #anchor (click)="onToggle()">
+      <kendo-icon [name]="'menu'"></kendo-icon>
+    </button>
+    <kendo-popup [anchor]="anchor" *ngIf="show" [margin]="margin">
+      <div class='content'>
+        <ul>
+          <li class="search">Search...</li>
+          <li><span>What's New</span></li>
+          <li><span>About</span></li>
+          <li><span>Contacts</span></li>
+          <li><span>Notifications</span></li>
+          <li><span>My Profile</span></li>
+        </ul>
+      </div>
+    </kendo-popup>
+    <kendo-avatar [imageSrc]="imageUrl" [shape]="'circle'"></kendo-avatar>
+  </kendo-appbar-section>
+</kendo-appbar>
+
+<!--<div class="custom-toolbar">
+
+
   <button
     kendoButton
     icon="menu"
-    look="flat"
-    (click)="drawer.toggle()">
+    look="flat">
   </button>
   <span>
-    Welcome to Shepherd Micro front Modules
-  </span>
-</div>
-<kendo-drawer-container>
-  <kendo-drawer #drawer
-                [items]="microfrontends"
-                [width]="100"
-                [mini]="true"
-                [mode]="'push'"
-                [(expanded)]="expanded">
-    <ng-template kendoDrawerItemTemplate let-item>
-      <div class="k-drawer-link" [routerLink]="item.routePath">
-        <span>{{ item.displayName }}</span>
-      </div>
-    </ng-template>
-  </kendo-drawer>
-  <kendo-drawer-content>
-    <router-outlet></router-outlet>
-  </kendo-drawer-content>
-</kendo-drawer-container>
+      Welcome to Shepherd Micro front Modules
+      </span>
 
+
+</div>-->
+<div class="row">
+  <div class="col-sm-12">
+    <kendo-drawer-container>
+      <kendo-drawer style="top:1px" #drawer
+                    [autoCollapse]="false"
+                    [items]="menuItems"
+                    [mini]="false"
+                    [mode]="'push'"
+                    [width]="120"
+                    [(expanded)]="expanded">
+        <ng-template kendoDrawerItemTemplate let-item>
+          <div [routerLink]="item.path" class="w-100">
+            <div class="text-center">
+
+              <span class="k-icon display-1 {{ item.icon }}"></span>
+              <div>
+                {{ item.name }}
+              </div>
+            </div>
+          </div>
+          <!--*ngIf="expanded"-->
+        </ng-template>
+      </kendo-drawer>
+      <kendo-drawer-content>
+        <router-outlet></router-outlet>
+      </kendo-drawer-content>
+    </kendo-drawer-container>
+  </div>
+</div>
+
+
+<ng-template #moduleTemplate let-module="module">
+
+  <div class="col-sm-4">
+    <button kendoButton [routerLink]="module.routePath" look="flat">
+      <span class="k-icon {{module.icon}}"></span>
+      <p>{{module.displayName}}</p>
+    </button>
+  </div>
+</ng-template>
 
 

@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
-import {Microfrontend} from './microfrontend';
+import {MenuItem, ModuleRoute, ModulesName} from './microfrontend';
 
 @Injectable({providedIn: 'root'})
 export class LookupService {
-  lookup(): Promise<Microfrontend[]> {
+  lookup(): Promise<MenuItem[]> {
     return Promise.resolve([
       {
         // For Loading
@@ -14,7 +14,8 @@ export class LookupService {
         // For Routing
         displayName: 'Hire',
         routePath: 'hire',
-        ngModuleName: 'PagesModule'
+        ngModuleName: 'PagesModule',
+        icon: 'k-i-user'
       },
       {
         // For Loading
@@ -25,7 +26,8 @@ export class LookupService {
         // For Routing
         displayName: 'Boarding',
         routePath: 'boarding',
-        ngModuleName: 'PagesModule'
+        ngModuleName: 'PagesModule',
+        icon: 'k-i-track-changes-enable'
       },
       {
         // For Loading
@@ -36,7 +38,8 @@ export class LookupService {
         // For Routing
         displayName: 'My365',
         routePath: 'my365',
-        ngModuleName: 'PagesModule'
+        ngModuleName: 'PagesModule',
+        icon: 'k-i-style-builder'
       },
       {
         // For Loading
@@ -47,7 +50,8 @@ export class LookupService {
         // For Routing
         displayName: 'Time',
         routePath: 'time',
-        ngModuleName: 'PagesModule'
+        ngModuleName: 'PagesModule',
+        icon: 'k-i-clock'
       },
       {
         // For Loading
@@ -58,68 +62,17 @@ export class LookupService {
         // For Routing
         displayName: 'Settings',
         routePath: 'settings',
-        ngModuleName: 'PagesModule'
+        ngModuleName: 'PagesModule',
+        icon: 'k-i-clock',
+        deflateModule: ModulesName.settings,
+        pages: [
+          {name: 'general', icon: 'k-i-wrench', path: 'settings/general'},
+          {name: 'permissions', icon: 'k-i-apply-format', path: 'settings/permissions'},
+          {name: 'learning', icon: 'k-i-paste-markdown', path: 'settings/learning'}
+        ]
       },
-    ] as Microfrontend[]);
-  }
-
-  getMenu(): Promise<Microfrontend[]> {
-    return Promise.resolve([
-      {
-        // For Loading
-        remoteEntry: 'http://localhost:3001/remoteEntry.js',
-        remoteName: 'hire',
-        exposedModule: './Module',
-
-        // For Routing
-        displayName: 'Hire',
-        routePath: 'hire',
-        ngModuleName: 'PagesModule'
-      },
-      {
-        // For Loading
-        remoteEntry: 'http://localhost:3002/remoteEntry.js',
-        remoteName: 'boarding',
-        exposedModule: './Module',
-
-        // For Routing
-        displayName: 'Boarding',
-        routePath: 'boarding',
-        ngModuleName: 'PagesModule'
-      },
-      {
-        // For Loading
-        remoteEntry: 'http://localhost:3003/remoteEntry.js',
-        remoteName: 'my365',
-        exposedModule: './Module',
-
-        // For Routing
-        displayName: 'My365',
-        routePath: 'my365',
-        ngModuleName: 'PagesModule'
-      },
-      {
-        // For Loading
-        remoteEntry: 'http://localhost:3005/remoteEntry.js',
-        remoteName: 'time',
-        exposedModule: './Module',
-
-        // For Routing
-        displayName: 'Time',
-        routePath: 'time',
-        ngModuleName: 'PagesModule'
-      },
-      {
-        // For Loading
-        remoteEntry: 'http://localhost:3015/remoteEntry.js',
-        remoteName: 'settings',
-        exposedModule: './Module',
-
-        // For Routing
-        displayName: 'Settings',
-        routePath: 'settings',
-        ngModuleName: 'PagesModule'
-      },
-    ] as Microfrontend[]);
+    ] as MenuItem[]);
   }
 }
+
+

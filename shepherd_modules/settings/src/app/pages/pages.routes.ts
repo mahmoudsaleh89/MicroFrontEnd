@@ -5,10 +5,10 @@ import {LearningComponent} from './learning/learning.component';
 import {HomeComponent} from '../home/home.component';
 
 export const SETTINGS_ROUTES: Routes = [
-  {
+  /*{
     path: '',
     component: HomeComponent
-  },
+  },*/
   {
     path: 'general',
     component: GeneralComponent
@@ -20,5 +20,9 @@ export const SETTINGS_ROUTES: Routes = [
   {
     path: 'learning',
     component: LearningComponent
+  },
+  {
+    path: '**',
+    redirectTo: 'general'
   }
 ];
